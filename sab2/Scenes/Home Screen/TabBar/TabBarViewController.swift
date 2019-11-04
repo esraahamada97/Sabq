@@ -16,7 +16,7 @@ var listModule = ListModule()
         // Do any additional setup after loading the view.
         
         setupTabBar()
-        self.selectedIndex = 4
+       
     }
     
     func setupTabBar() {
@@ -42,12 +42,11 @@ var listModule = ListModule()
                                                       selected: #imageLiteral(resourceName: "ic_bookmark_active"),
                                                       unselected: #imageLiteral(resourceName: "ic_save_1"), title:  NSLocalizedString("choices", comment: ""))
         
-        viewControllers = [choicesController,
-                           searchController,
-                           sectionsController,
+        viewControllers = [homeViewController,
                            popularController,
-                           homeViewController]
-        
+                           sectionsController,
+                           searchController,
+                           choicesController]
         guard let items = tabBar . items else { return }
         
         for item in items {

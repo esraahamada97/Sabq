@@ -57,7 +57,7 @@ UICollectionViewDelegateFlowLayout {
         }
         guard  let sliderObj = list?[indexPath.row] else { fatalError("no object") }
        collectionCell.configur(slioderObj: sliderObj)
-        pageControl.currentPage = indexPath.row 
+        
         
         return collectionCell
     }
@@ -73,7 +73,9 @@ UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
+        pageControl.currentPage = indexPath.row 
        
     }
+    
         
 }

@@ -71,7 +71,7 @@ UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.size.width / 2  ,
-                      height:  collectionView.frame.size.height - 157 )
+                      height: collectionView.frame.size.height - 190)
     }
     
 }

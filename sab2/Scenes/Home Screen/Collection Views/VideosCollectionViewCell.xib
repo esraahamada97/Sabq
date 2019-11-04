@@ -26,8 +26,8 @@
                                     <constraint firstAttribute="height" constant="154" id="Lm3-6t-XbJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="juiuhuhbhuhhhhhjhuhehurhurdtuhhurguhrhuguhujujgfujur" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTG-ft-g9U">
-                                <rect key="frame" x="0.0" y="167" width="152" height="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="juiuhuhbhuhhhhhjhuhehurhurdtuhhurguhrhuguhujujgfujur" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTG-ft-g9U">
+                                <rect key="frame" x="0.0" y="167" width="138" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                             <constraint firstAttribute="trailing" secondItem="lKL-oT-82z" secondAttribute="trailing" id="Q5d-dm-O2E"/>
                             <constraint firstItem="PTG-ft-g9U" firstAttribute="leading" secondItem="x7v-2p-ETl" secondAttribute="leading" id="atN-EU-WSJ"/>
                             <constraint firstItem="ilR-mb-nHU" firstAttribute="top" secondItem="x7v-2p-ETl" secondAttribute="top" id="deg-o6-8v2"/>
-                            <constraint firstAttribute="trailing" secondItem="PTG-ft-g9U" secondAttribute="trailing" constant="4" id="f3q-gw-sK2"/>
+                            <constraint firstAttribute="trailing" secondItem="PTG-ft-g9U" secondAttribute="trailing" constant="18" id="f3q-gw-sK2"/>
                             <constraint firstItem="lKL-oT-82z" firstAttribute="leading" secondItem="x7v-2p-ETl" secondAttribute="leading" id="vAX-9G-L0c"/>
                             <constraint firstItem="Zng-G9-GNK" firstAttribute="leading" secondItem="x7v-2p-ETl" secondAttribute="leading" constant="7" id="vQr-Ok-XLD"/>
                             <constraint firstItem="Dtr-8L-xeJ" firstAttribute="top" secondItem="PTG-ft-g9U" secondAttribute="bottom" constant="13" id="ysd-lD-R4a"/>

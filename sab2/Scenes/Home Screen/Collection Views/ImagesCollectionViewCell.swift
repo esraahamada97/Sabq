@@ -35,8 +35,10 @@ class ImagesCollectionViewCell: UICollectionViewCell {
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM dd,yyyy"
         
-        if let date = dateFormatterGet.date(from: publishDate ) {
-           timeLabel.text = "\(date)"
+        if let dateBefore = dateFormatterGet.date(from: publishDate ) {
+            dateFormatterGet.dateFormat = "yyyy-MM-dd"
+            let dateAfter = dateFormatterGet.string(from: dateBefore )
+           timeLabel.text = dateAfter
         } else {
             print("There was an error decoding the string")
         }
