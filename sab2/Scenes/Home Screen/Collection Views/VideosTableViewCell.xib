@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ahw-2l-mHY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="348"/>
-                        <color key="backgroundColor" red="0.1215686277" green="0.1294117719" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="articleCollection"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="375" id="L5H-am-PXB"/>
                             <constraint firstAttribute="height" constant="348" id="OGF-Cd-kQP"/>
@@ -39,6 +40,7 @@
                     <constraint firstAttribute="bottom" secondItem="ahw-2l-mHY" secondAttribute="bottom" id="uLZ-BA-qsF"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="articleCollection"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="videosCollectionView" destination="ahw-2l-mHY" id="avo-n3-ZYo"/>
@@ -46,4 +48,9 @@
             <point key="canvasLocation" x="142.75362318840581" y="89.732142857142847"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="articleCollection">
+            <color red="0.12156862745098039" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Cell Background"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="INJ-x5-eFv" secondAttribute="bottom" constant="22" id="3Nr-xE-LMf"/>
                             <constraint firstItem="2q4-q9-BWc" firstAttribute="leading" secondItem="INJ-x5-eFv" secondAttribute="trailing" constant="16" id="7pp-TO-IMq"/>
@@ -57,7 +58,7 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="Cell Background"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="twP-Qb-cPe" secondAttribute="bottom" id="Jul-1a-kcO"/>
                 <constraint firstAttribute="trailing" secondItem="twP-Qb-cPe" secondAttribute="trailing" id="VZU-m9-laN"/>
@@ -73,4 +74,9 @@
             <point key="canvasLocation" x="131.15942028985509" y="91.40625"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="Cell Background">
+            <color red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

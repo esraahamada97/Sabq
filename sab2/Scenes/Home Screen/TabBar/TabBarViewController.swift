@@ -14,8 +14,8 @@ var listModule = ListModule()
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
-        
         setupTabBar()
+        
        
     }
     
@@ -71,6 +71,7 @@ var listModule = ListModule()
             navController.tabBarItem.title = title
             navController.tabBarItem.image = unselected
             navController.tabBarItem.selectedImage = selected
+            
             return navController}
     }
     

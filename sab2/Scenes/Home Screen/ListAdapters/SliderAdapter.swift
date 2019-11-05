@@ -14,12 +14,14 @@ UICollectionViewDelegateFlowLayout {
     var list: [Slider]?
     typealias DataType = Slider
     var pageControl: UIPageControl!
+    var sliderCollectionView: UICollectionView!
     var reloadData: (() -> Void)?
     var showEmptyState: ((Bool) -> Void)?
     func add(item: Slider) {}
     
-    func setAdaptor(pageControl: UIPageControl) {
+    func setAdaptor(pageControl: UIPageControl, sliderCollectionView: UICollectionView ) {
         self.pageControl = pageControl
+        self.sliderCollectionView = sliderCollectionView
     }
     
     func add(items: [Slider]) {
@@ -58,7 +60,6 @@ UICollectionViewDelegateFlowLayout {
         guard  let sliderObj = list?[indexPath.row] else { fatalError("no object") }
        collectionCell.configur(slioderObj: sliderObj)
         
-        
         return collectionCell
     }
     
@@ -70,12 +71,18 @@ UICollectionViewDelegateFlowLayout {
                       height: collectionView.frame.size.height )
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        pageControl.currentPage = indexPath.row 
-       
-    }
-    
-        
+//    func collectionView(_ collectionView: UICollectionView,
+//                        willDisplay cell: UICollectionViewCell,
+//                        forItemAt indexPath: IndexPath) {
+//        pageControl.currentPage = indexPath.row 
+//       
+//    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           let center = CGPoint(x: scrollView.contentOffset.x + (scrollView.frame.width / 2),
+                                y: (scrollView.frame.height / 2))
+           if let index = sliderCollectionView.indexPathForItem(at: center) {
+               self.pageControl.currentPage = index.row
+           }
+       }
 }

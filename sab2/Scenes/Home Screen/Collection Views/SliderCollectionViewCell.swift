@@ -23,6 +23,7 @@ class SliderCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        sliderDescription.textColor = UIColor(named: "subtitleText Color")
     }
     func configur(slioderObj: Slider) {
         let  imageURL = slioderObj.coverPhoto

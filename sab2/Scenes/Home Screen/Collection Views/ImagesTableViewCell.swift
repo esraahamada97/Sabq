@@ -11,10 +11,17 @@ import UIKit
 class ImagesTableViewCell: UITableViewCell {
     @IBOutlet weak private var imagesCollectionView: UICollectionView!
     var imagesAdapter = ImagesAdapter()
-    
+    let cellIdentifier = "ImagesCollectionViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setCollectionView()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    func setCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.itemSize = UICollectionViewFlowLayout.automaticSize
@@ -24,14 +31,9 @@ class ImagesTableViewCell: UITableViewCell {
         self.imagesCollectionView.dataSource = imagesAdapter
         self.imagesCollectionView.delegate = imagesAdapter
         
-        let cellNib = UINib(nibName: "ImagesCollectionViewCell", bundle: nil)
-        self.imagesCollectionView.register(cellNib, forCellWithReuseIdentifier: "ImagesCollectionViewCell")
-    }
+        let cellNib = UINib(nibName: cellIdentifier, bundle: nil)
+        self.imagesCollectionView.register(cellNib, forCellWithReuseIdentifier: cellIdentifier)
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func reloadCollectionView() {

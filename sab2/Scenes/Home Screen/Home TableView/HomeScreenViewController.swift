@@ -14,6 +14,12 @@ ListViewProtocal {
     @IBOutlet weak private var homeTableView: UITableView!
     var listPresenter: ListPresenter?
     var newsAdapter = NewsAdapter()
+    let homeTableViewCellIdentifier = "HomeTableViewCell"
+    let sliderTableViewCellIdentifier = "SliderTableViewCell"
+    let imagesTableViewCellIdentifier = "ImagesTableViewCell"
+    let videosTableViewCellIdentifier = "VideosTableViewCell"
+    let articlesTableViewCellIdentifier = "ArticlesTableViewCell"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +30,6 @@ ListViewProtocal {
         rightNavigationBarItem()
         
         listPresenter?.loadResponse()
-//        listPresenter?.loadSlider()
         listPresenter?.loadVideos()
         listPresenter?.loadImage()
         listPresenter?.loadArticles()
@@ -73,22 +78,23 @@ ListViewProtocal {
             style: .plain,
             target: self,
             action: nil)
-     
+        
         self.navigationItem.rightBarButtonItem = rightBarButton
         
     }
     
     func registerCells() {
-        let defaultCellNib = UINib(nibName: "HomeTableViewCell", bundle: nil)
-        homeTableView.register(defaultCellNib, forCellReuseIdentifier: "HomeTableViewCell")
-        let sliderCellNib = UINib(nibName: "SliderTableViewCell", bundle: nil)
-        homeTableView.register(sliderCellNib, forCellReuseIdentifier: "SliderTableViewCell")
-        let imagesCellNib = UINib(nibName: "ImagesTableViewCell", bundle: nil)
-        homeTableView.register(imagesCellNib, forCellReuseIdentifier: "ImagesTableViewCell")
-        let videosCellNib = UINib(nibName: "VideosTableViewCell", bundle: nil)
-        homeTableView.register(videosCellNib, forCellReuseIdentifier: "VideosTableViewCell")
-        let articlesCellNib = UINib(nibName: "ArticlesTableViewCell", bundle: nil)
-        homeTableView.register(articlesCellNib, forCellReuseIdentifier: "ArticlesTableViewCell")
+        let defaultCellNib = UINib(nibName: homeTableViewCellIdentifier, bundle: nil)
+        homeTableView.register(defaultCellNib, forCellReuseIdentifier: homeTableViewCellIdentifier)
+        
+        let sliderCellNib = UINib(nibName: sliderTableViewCellIdentifier, bundle: nil)
+        homeTableView.register(sliderCellNib, forCellReuseIdentifier: sliderTableViewCellIdentifier)
+        let imagesCellNib = UINib(nibName: imagesTableViewCellIdentifier, bundle: nil)
+        homeTableView.register(imagesCellNib, forCellReuseIdentifier: imagesTableViewCellIdentifier)
+        let videosCellNib = UINib(nibName: videosTableViewCellIdentifier, bundle: nil)
+        homeTableView.register(videosCellNib, forCellReuseIdentifier: videosTableViewCellIdentifier)
+        let articlesCellNib = UINib(nibName: articlesTableViewCellIdentifier, bundle: nil)
+        homeTableView.register(articlesCellNib, forCellReuseIdentifier: articlesTableViewCellIdentifier)
     }
     
     func setMaterial(array: [Materials]) {
@@ -113,7 +119,7 @@ ListViewProtocal {
     func reloadData() {
         homeTableView.reloadData()
     }
-
+    
     override func setPresenter(presenter: ListPresenter) {
         listPresenter = presenter
     }
