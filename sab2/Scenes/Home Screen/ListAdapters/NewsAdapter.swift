@@ -45,7 +45,7 @@ UITableViewDataSource {
     
     func addArticles(items: [Materials]) {
         articlesList = items
-       reloadData?()
+        reloadData?()
     }
     
     func update(item: Materials) {}
@@ -89,20 +89,38 @@ UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:     return 1
-        case 1:     return count()
+        case 1:     return  list?.isEmpty ?? true ? 4 : count()
         default:    return 0
             
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (list?.isEmpty ?? true) {
+            switch indexPath.section {
+            case 0 :
+                guard let  cell = tableView.dequeueReusableCell(
+                    withIdentifier: "SliderShimmerTableViewCell")
+                    as? SliderShimmerTableViewCell else { fatalError("slider cell empty") }
+                return cell
+            case 1 ://first cells
+                guard let  cell = tableView.dequeueReusableCell(
+                    withIdentifier: "HomeShimmerTableViewCell")
+                    as? HomeShimmerTableViewCell else { fatalError("slider cell empty") }
+                return cell
+                
+            default :
+                return UITableViewCell()
+                
+            }
+        }
         switch indexPath.section {
         case 0: //Slider
             guard let  cell = tableView.dequeueReusableCell(
                 withIdentifier: "SliderTableViewCell")
                 as? SliderTableViewCell else { fatalError("slider cell empty") }
-//            cell.frame = tableView.bounds
-//            cell.layoutIfNeeded()
+            //            cell.frame = tableView.bounds
+            //            cell.layoutIfNeeded()
             cell.configurTableViewCell(sliderArray: sliderList)
             cell.reloadCollectionView()
             return cell
@@ -112,9 +130,9 @@ UITableViewDataSource {
                 guard  let cell: ImagesTableViewCell = tableView.dequeueReusableCell(
                     withIdentifier: "ImagesTableViewCell",
                     for: indexPath) as? ImagesTableViewCell else { fatalError("image cell empty") }
-//                cell.frame = tableView.bounds
-//                cell.layoutIfNeeded()
-               
+                //                cell.frame = tableView.bounds
+                //                cell.layoutIfNeeded()
+                
                 cell.configurTableViewCell(imagesArray: imagesList)
                 //cell.reloadCollectionView()
                 return cell
@@ -122,8 +140,8 @@ UITableViewDataSource {
                 guard let cell: VideosTableViewCell = tableView.dequeueReusableCell(
                     withIdentifier: "VideosTableViewCell",
                     for: indexPath) as? VideosTableViewCell else { fatalError("videos cell empty") }
-//                cell.frame = tableView.bounds
-//                cell.layoutIfNeeded()
+                //                cell.frame = tableView.bounds
+                //                cell.layoutIfNeeded()
                 cell.configurTableViewCell(videosArray: videosList)
                 //cell.reloadCollectionView()
                 return cell
@@ -131,8 +149,8 @@ UITableViewDataSource {
                 guard  let cell: ArticlesTableViewCell = tableView.dequeueReusableCell(
                     withIdentifier: "ArticlesTableViewCell",
                     for: indexPath) as? ArticlesTableViewCell else { fatalError("articles cell empty") }
-//                cell.frame = tableView.bounds
-//                cell.layoutIfNeeded()
+                //                cell.frame = tableView.bounds
+                //                cell.layoutIfNeeded()
                 cell.configurTableViewCell(articlesArray: articlesList)
                 //cell.reloadCollectionView()
                 return cell

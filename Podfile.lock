@@ -11,12 +11,14 @@ PODS:
     - SDWebImage/Core (= 5.1.1)
   - SDWebImage/Core (5.1.1)
   - SwiftLint (0.36.0)
+  - Windless (0.1.5)
 
 DEPENDENCIES:
   - DateToolsSwift
   - Moya
   - SDWebImage (~> 5.0)
   - SwiftLint
+  - Windless (~> 0.1.5)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -27,6 +29,7 @@ SPEC REPOS:
   trunk:
     - DateToolsSwift
     - SwiftLint
+    - Windless
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
@@ -35,7 +38,8 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
+  Windless: c6b7d63ac3a0c7e6b241e316650d4605abf71894
 
-PODFILE CHECKSUM: bc015f90369b0caf0c54cda9c1761c3dad5afa6c
+PODFILE CHECKSUM: c44c3574a58f55b2b4713ec61fb623b6b7579310
 
 COCOAPODS: 1.8.4

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Windless
 class HomeScreenViewController: BaseViewController<ListPresenter>,
 ListViewProtocal {
     
@@ -19,7 +19,9 @@ ListViewProtocal {
     let imagesTableViewCellIdentifier = "ImagesTableViewCell"
     let videosTableViewCellIdentifier = "VideosTableViewCell"
     let articlesTableViewCellIdentifier = "ArticlesTableViewCell"
-    
+   
+     let sliderShimmerTableViewCellIdentifier = "SliderShimmerTableViewCell"
+     let homeShimmerTableViewCellIdentifier = "HomeShimmerTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ ListViewProtocal {
         titleNavigationBarItem()
         leftNavigationBarItem()
         rightNavigationBarItem()
-        
+       
         listPresenter?.loadResponse()
         listPresenter?.loadVideos()
         listPresenter?.loadImage()
@@ -38,9 +40,15 @@ ListViewProtocal {
         self.homeTableView.delegate = newsAdapter
         self.homeTableView.dataSource = newsAdapter
         registerCells()
+        registerShimmerCells()
+        
         homeTableView.estimatedRowHeight = 145
         homeTableView.rowHeight = UITableView.automaticDimension
-        newsAdapter.reloadData = reloadData
+       
+      
+         newsAdapter.reloadData = reloadData
+         //  homeTableView.windless.start()
+        
     }
     
     func titleNavigationBarItem() {
@@ -95,6 +103,14 @@ ListViewProtocal {
         homeTableView.register(videosCellNib, forCellReuseIdentifier: videosTableViewCellIdentifier)
         let articlesCellNib = UINib(nibName: articlesTableViewCellIdentifier, bundle: nil)
         homeTableView.register(articlesCellNib, forCellReuseIdentifier: articlesTableViewCellIdentifier)
+    }
+    
+    func registerShimmerCells() {
+           let homeShimmerCellNib = UINib(nibName: homeShimmerTableViewCellIdentifier, bundle: nil)
+           homeTableView.register(homeShimmerCellNib, forCellReuseIdentifier: homeShimmerTableViewCellIdentifier)
+           
+           let sliderShimmerCellNib = UINib(nibName: sliderShimmerTableViewCellIdentifier, bundle: nil)
+           homeTableView.register(sliderShimmerCellNib, forCellReuseIdentifier: sliderShimmerTableViewCellIdentifier)
     }
     
     func setMaterial(array: [Materials]) {
