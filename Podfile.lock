@@ -1,6 +1,24 @@
 PODS:
   - Alamofire (4.9.0)
+  - AppAuth (1.2.0):
+    - AppAuth/Core (= 1.2.0)
+    - AppAuth/ExternalUserAgent (= 1.2.0)
+  - AppAuth/Core (1.2.0)
+  - AppAuth/ExternalUserAgent (1.2.0)
   - DateToolsSwift (4.0.0)
+  - FittedSheets (1.4.5)
+  - GoogleSignIn (5.0.1):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GTMAppAuth (1.0.0):
+    - AppAuth/Core (~> 1.0)
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.3.0):
+    - GTMSessionFetcher/Full (= 1.3.0)
+  - GTMSessionFetcher/Core (1.3.0)
+  - GTMSessionFetcher/Full (1.3.0):
+    - GTMSessionFetcher/Core (= 1.3.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -15,6 +33,8 @@ PODS:
 
 DEPENDENCIES:
   - DateToolsSwift
+  - FittedSheets
+  - GoogleSignIn
   - Moya
   - SDWebImage (~> 5.0)
   - SwiftLint
@@ -27,19 +47,29 @@ SPEC REPOS:
     - Result
     - SDWebImage
   trunk:
+    - AppAuth
     - DateToolsSwift
+    - FittedSheets
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
     - SwiftLint
     - Windless
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AppAuth: bce82c76043657c99d91e7882e8a9e1a93650cd4
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
+  FittedSheets: 7f754c9f6fb4ea330cbc57c652b594255f2a6819
+  GoogleSignIn: 3a51b9bb8e48b635fd7f4272cee06ca260345b86
+  GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
+  GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   Windless: c6b7d63ac3a0c7e6b241e316650d4605abf71894
 
-PODFILE CHECKSUM: c44c3574a58f55b2b4713ec61fb623b6b7579310
+PODFILE CHECKSUM: 2c147fb9b72e5b45f9bb626dff3d8fad46b38fb8
 
 COCOAPODS: 1.8.4

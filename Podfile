@@ -10,6 +10,8 @@ target 'sab2' do
 pod 'SwiftLint'
 pod 'DateToolsSwift'
  pod 'Windless', '~> 0.1.5'
+pod 'GoogleSignIn'
+pod 'FittedSheets'
 
   # Pods for sab2
 

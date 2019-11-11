@@ -14,7 +14,7 @@ struct Routing {
         window = windowFromAppDelegate
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        let rootViewController = TabBarViewController()
+        let rootViewController = LoginScreenViewController()
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
     }
